@@ -28,8 +28,10 @@ In our particular scenario, 1 is the "middle" element or the pivot, so all 0's s
 
 
 # Building and Running
-Clone the source repository from Github.
-On the command line, enter:
-`git clone https://github.com/petrosyanvan/envio`
-
-Change to the directory where you cloned `envio`, and type `make` to build the program. To run the program type`./runner` from the same directory
+Use the following commands in the command line to clone, build and run the program.
+```
+git clone https://github.com/petrosyanvan/envio
+cd envio
+make
+./runner
+```

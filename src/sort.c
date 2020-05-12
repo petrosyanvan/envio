@@ -66,7 +66,6 @@ int asort(int* arr, size_t len) {
             default:
                 /* not allowed value */
                 return -1;
-
         }
     }
 
