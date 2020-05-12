@@ -83,7 +83,6 @@ int main() {
     assert(memcmp(a, a_exp, len) == 0);
     print_array(a, len);
 
-
     int b[] = { 2, 0, 1, 0, 1, 2, 1 };
     int b_exp[] = { 0, 0, 1, 1, 1, 2, 2 };
     len = sizeof(b) / sizeof(b[0]);
@@ -93,7 +92,7 @@ int main() {
 
     int c[] = { 2, 0, 1, 0, 1, 2, -1 };
     len = sizeof(c) / sizeof(c[0]);
-    assert(asort(c, len) == 0);
+    assert(asort(c, len) == -1);
 
     int d[] = { };
     len = sizeof(d) / sizeof(d[0]);
