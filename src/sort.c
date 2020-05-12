@@ -1,6 +1,8 @@
 /* Simple C program to sort an array of 0s 1s and 2s. */
 
 #include <stdio.h>
+#include <string.h>
+#include <assert.h>
 
 /*
  * Function to print the array values
@@ -75,40 +77,27 @@ int asort(int* arr, size_t len) {
 int main() {
     /* perform several tests on asort function */
     int a[] = { 2, 2, 1, 0, 1, 0, 1, 1, 0, 2, 2, 1, 1, 1, 2, 0, 0, 1, 1, 0, 1, 0, 1, 2, 0, 0, 0, 1, 1, 2 };
+    int a_exp[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2 };
     size_t len = sizeof(a) / sizeof(a[0]);
-    if (!asort(a, len)) {
-        print_array(a, len);
-    }
-    else {
-        printf("Invalid array was passed\n");
-    }
+    assert(asort(a, len) == 0);
+    assert(memcmp(a, a_exp, len) == 0);
+    print_array(a, len);
+
 
     int b[] = { 2, 0, 1, 0, 1, 2, 1 };
+    int b_exp[] = { 0, 0, 1, 1, 1, 2, 2 };
     len = sizeof(b) / sizeof(b[0]);
-    if (!asort(b, len)) {
-        print_array(b, len);
-    }
-    else {
-        printf("Invalid array was passed\n");
-    }
+    assert(asort(b, len) == 0);
+    assert(memcmp(b, b_exp, len) == 0);
+    print_array(b, len);
 
     int c[] = { 2, 0, 1, 0, 1, 2, -1 };
     len = sizeof(c) / sizeof(c[0]);
-    if (!asort(c, len)) {
-        print_array(c, len);
-    }
-    else {
-        printf("Invalid array was passed\n");
-    }
+    assert(asort(c, len) == 0);
 
     int d[] = { };
     len = sizeof(d) / sizeof(d[0]);
-    if (!asort(d, len)) {
-       print_array(d, len);
-    }
-    else {
-       printf("Invalid array was passed\n");
-    }
+    assert(asort(d, len) == -1);
 
     return 0;
 }
