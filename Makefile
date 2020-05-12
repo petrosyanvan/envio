@@ -23,7 +23,7 @@ DEPS = $(OBJECTS:.o=.d)
 
 # flags #
 COMPILE_FLAGS = -c -Wall -Wextra -g
-INCLUDES = -I include/ -I /usr/local/include -I inc/
+INCLUDES = -I /usr/local/include 
 # Space-separated pkg-config libraries used by this project
 LIBS =
 
