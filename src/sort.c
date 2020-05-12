@@ -1,6 +1,5 @@
 /* Simple C program to sort an array of 0s 1s and 2s. */
 
-#include <stdint.h>
 #include <stdio.h>
 
 /*
@@ -75,13 +74,42 @@ int asort(int* arr, size_t len) {
 }
 
 int main() {
-	
-	int arr[] = { 2, 2, 1, 0, 1, 0, 1, 1, 0, 2, 2, 1, 1, 1, 2, 0, 0, 1, 1, 0, 1, 0, 1, 2, 0, 0, 0,1, 1, 2};
-	if (!asort(arr, sizeof(arr) / sizeof(arr[0]))) {
-		print_array(arr, sizeof(arr) / sizeof(arr[0]));
+	/* perform several tests on asort function */
+	int a[] = { 2, 2, 1, 0, 1, 0, 1, 1, 0, 2, 2, 1, 1, 1, 2, 0, 0, 1, 1, 0, 1, 0, 1, 2, 0, 0, 0, 1, 1, 2 };
+	size_t len = sizeof(a) / sizeof(a[0]);
+	if (!asort(a, len)) {
+		print_array(a, len);
 	}
 	else {
 		printf("Invalid array was passed\n");
 	}
+
+	int b[] = { 2, 0, 1, 0, 1, 2, 1 };
+	len = sizeof(b) / sizeof(b[0]);
+	if (!asort(b, len)) {
+		print_array(b, len);
+	}
+	else {
+		printf("Invalid array was passed\n");
+	}
+
+	int c[] = { 2, 0, 1, 0, 1, 2, -1 };
+	len = sizeof(c) / sizeof(c[0]);
+	if (!asort(c, len)) {
+		print_array(c, len);
+	}
+	else {
+		printf("Invalid array was passed\n");
+	}
+
+	int d[] = { };
+	len = sizeof(d) / sizeof(d[0]);
+	if (!asort(d, len)) {
+		print_array(d, len);
+	}
+	else {
+		printf("Invalid array was passed\n");
+	}
+
 	return 0;
 }
